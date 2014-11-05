@@ -1,3 +1,4 @@
+<?php //include_once("includes/valid_session.php"); ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <head>
@@ -9,7 +10,6 @@
     </head>
     <body>
         <?php
-            include_once("includes/valid_session.php");
             include_once("includes/menu.php");
         ?>
         <div class="container">
@@ -28,6 +28,9 @@
     	    					<th>OAB</th>
     	    					<th>UF</th>
     	    					<th>Nome</th>
+    	    					<th>Telefone</th>
+    	    					<th>Celular</th>
+    	    					<th>E-mail</th>
     	    					<th>A&ccedil;&otilde;es</th>
     	    				</tr>
     	    			</thead>
@@ -37,6 +40,9 @@
     	    					<td>0000/0000</td>
     	    					<td>SP</td>
     	    					<td>Edgar de Oliveira Carmo</td>
+    	    					<td>(11) 3066-4572</td>
+    	    					<td>(11) 99338-9037</td>
+    	    					<td>edgar.carmo@edenred.com</td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
@@ -46,7 +52,10 @@
     	    					<td><input type="checkbox" /></td>
     	    					<td>0000/0000</td>
     	    					<td>SP</td>
-    	    					<td>Edgar de Oliveira Carmo</td>
+    	    					<td>Adauto Cavasini Fernandes</td>
+    	    					<td>(11) 3066-4100</td>
+    	    					<td>(11) 90000-0000</td>
+    	    					<td>adauto.fernandes@consulting-for.edenred.com</td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
@@ -67,11 +76,12 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogado</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogado</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover advogados</button>
         		</div>
         	</div>
         </div>
-        <?php  include_once("includes/scripts.php"); ?>
+        <?php include_once("includes/modal/lawyer_add.php"); ?>
+        <?php include_once("includes/scripts.php"); ?>
     </body>
 </html>
