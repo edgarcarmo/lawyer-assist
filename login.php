@@ -9,7 +9,7 @@
     </head>
     <body>
         <?php
-            include_once("includes/template/menu_initial.php");
+            include_once("includes/template/menu.php");
         ?>
         <div class="container">
     	   <div class="col-md-4">&nbsp;</div>
