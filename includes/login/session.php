@@ -1,6 +1,6 @@
 <?PHP
 session_start();
- 
+
 //Caso o usuário não esteja autenticado, limpa os dados e redireciona
 if ( !isset($_SESSION['login']) and !isset($_SESSION['password']) ) {
     //Destrói
@@ -13,4 +13,7 @@ if ( !isset($_SESSION['login']) and !isset($_SESSION['password']) ) {
     //Redireciona para a página de autenticação
     header('location:login.php');
 }
+
+include_once("includes/login/timeout.php");
+
 ?>

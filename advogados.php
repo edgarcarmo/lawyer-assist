@@ -4,13 +4,13 @@
     <head>
         <title>Lawyer Assist - Index</title>
         <?php
-            include_once("includes/metas.php");
-            include_once("includes/stylesheet.php");
+            include_once("includes/template/metas.php");
+            include_once("includes/template/stylesheet.php");
         ?>
     </head>
     <body>
         <?php
-            include_once("includes/menu.php");
+            include_once("includes/template/menu.php");
         ?>
         <div class="container">
         	<div class="col-md-6">
@@ -81,7 +81,7 @@
         		</div>
         	</div>
         </div>
+        <?php  include_once("includes/template/scripts.php"); ?>
         <?php include_once("includes/modal/lawyer_add.php"); ?>
-        <?php include_once("includes/scripts.php"); ?>
     </body>
 </html>

@@ -3,15 +3,14 @@
     <head>
         <title>Lawyer Assist - Index</title>
         <?php
-            include_once("includes/metas.php");
-            include_once("includes/stylesheet.php");
+            include_once("includes/template/metas.php");
+            include_once("includes/template/stylesheet.php");
         ?>
     </head>
     <body>
         <?php
-            include_once("includes/valid_login.php");
-            include_once("includes/timeout.php");
-            include_once("includes/menu.php");
+            include_once("includes/login/login.php");
+            include_once("includes/template/menu.php");
         ?>
         <div class="container">
            <div class="col-md-4">&nbsp;</div>
@@ -33,6 +32,6 @@
             </div>
             <div class="col-md-4">&nbsp;</div>
         </div>
-        <?php  include_once("includes/scripts.php"); ?>
+        <?php  include_once("includes/template/scripts.php"); ?>
     </body>
 </html>

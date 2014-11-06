@@ -11,7 +11,7 @@
         unset ($_SESSION['login']);
         unset ($_SESSION['password']);
 
-        include_once("includes/db_conection.php");
+        include_once("includes/db/conection.php");
 
         // as variáveis login e senha recebem os dados digitados na página anterior
         $login = $_POST['login'];
@@ -39,4 +39,6 @@
             header('location:login.php');
         }
     }
+
+     include_once("includes/login/timeout.php");
 ?>
