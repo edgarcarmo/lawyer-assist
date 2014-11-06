@@ -11,6 +11,8 @@ if ( !isset($_SESSION['email']) and !isset($_SESSION['password']) ) {
 
     //Redireciona para a página de autenticação
     header('location:login.php');
+} else if(isset($_SESSION['isadmin'])  && $_SESSION['isadmin'] == 0) {
+	header('location:index.php');
 }
 
 include_once("includes/login/timeout.php");

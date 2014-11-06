@@ -1,12 +1,12 @@
 <?php include_once("includes/login/login.php"); ?>
+<?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Lawyer Assist - Index</title>
+        <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
             include_once("includes/template/metas.php");
             include_once("includes/template/stylesheet.php");
-            include_once("includes/template/scriptsTop.php");
         ?>
     </head>
     <body>
@@ -16,7 +16,7 @@
         <div class="container">
            <div class="col-md-4">&nbsp;</div>
             <div class="col-md-4">
-                <h1>Index</h1>
+                <h1><?php echo ucfirst($paginaURL); ?></h1>
             </div>
             <div class="col-md-4">&nbsp;</div>
         </div>

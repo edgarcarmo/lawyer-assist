@@ -1,18 +1,3 @@
-<?php
-  function receberPagina($pagina){
-    $pagina = explode("/", $pagina);
-    $pagina = end($pagina);
-    $pagina = explode(".", $pagina);
-    return $pagina[0];
-  }
-  $paginaURL = receberPagina($_SERVER['REQUEST_URI']);
-  switch ($paginaURL) {
-    case 'login': {$nav0 = true; break;}
-    case 'index': {$nav1 = true; break;}
-    case 'advogados': {$nav2 = true; break;}
-    default: {$nav1 = true; break;}
-  }
-?>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,13 +15,13 @@
       <ul class="nav navbar-nav">
         <li <?php if(isset($nav1)) {echo 'class="active"';} ?>><a href="index.php">Home</a></li>
         <li <?php if(isset($nav2)) {echo 'class="active"';} ?>><a href="advogados.php">Advogados</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administra&ccedil;&atilde;o <span class="caret"></span></a>
+        <li <?php if(isset($nav9)) {echo 'class="dropdown active"';} else {echo 'class="dropdown"';}?>>
+          <a href="#" data-toggle="dropdown" id="adminMenu">Administra&ccedil;&atilde;o <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Comarca</a></li>
-            <li><a href="#">Vara</a></li>
+            <li><a href="comarcas.php">Comarcas</a></li>
+            <li><a href="varas.php">Varas</a></li>
             <li class="divider"></li>
-            <li><a href="#">Usuários</a></li>
+            <li><a href="usuarios.php">Usuários</a></li>
           </ul>
         </li>
       </ul>

@@ -26,12 +26,10 @@
     	    			<thead>
     	    				<tr>
     	    					<th><input type="checkbox" /></th>
-    	    					<th>OAB</th>
-    	    					<th>UF</th>
+    	    					<th>ID</th>
     	    					<th>Nome</th>
-    	    					<th>Telefone</th>
-    	    					<th>Celular</th>
     	    					<th>E-mail</th>
+                                <th>Admin</th>
     	    					<th>A&ccedil;&otilde;es</th>
     	    				</tr>
     	    			</thead>
@@ -39,29 +37,25 @@
     	    				<tr>
     	    					<td><input type="checkbox" /></td>
     	    					<td>0000/0000</td>
-    	    					<td>SP</td>
     	    					<td>Edgar de Oliveira Carmo</td>
-    	    					<td>(11) 3066-4572</td>
-    	    					<td>(11) 99338-9037</td>
     	    					<td>edgar.carmo@edenred.com</td>
+                                <td><input type="checkbox" /></td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
     	    					</td>
     	    				</tr>
     	    				<tr>
-    	    					<td><input type="checkbox" /></td>
-    	    					<td>0000/0000</td>
-    	    					<td>SP</td>
-    	    					<td>Adauto Cavasini Fernandes</td>
-    	    					<td>(11) 3066-4100</td>
-    	    					<td>(11) 90000-0000</td>
-    	    					<td>adauto.fernandes@consulting-for.edenred.com</td>
-    	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-    	    					</td>
-    	    				</tr>
+                                <td><input type="checkbox" /></td>
+                                <td>0000/0000</td>
+                                <td>Edgar de Oliveira Carmo</td>
+                                <td>edgar.carmo@edenred.com</td>
+                                <td><input type="checkbox" /></td>
+                                <td>
+                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
+                                </td>
+                            </tr>
     	    			</tbody>
     	    		</table>
     	    	</div>
@@ -77,12 +71,12 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogado</button>
-        			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover advogados</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
+        			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover usuários</button>
         		</div>
         	</div>
         </div>
         <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/advogados/lawyer_add.php"); ?>
+        <?php include_once("includes/modal/usuarios/lawyer_add.php"); ?>
     </body>
 </html>
