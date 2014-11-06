@@ -1,7 +1,8 @@
+<?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Lawyer Assist - Login</title>
+        <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
             include_once("includes/template/metas.php");
             include_once("includes/template/stylesheet.php");
@@ -14,13 +15,13 @@
         <div class="container">
     	   <div class="col-md-4">&nbsp;</div>
         	<div class="col-md-4">
-        		<h1>Login</h1>
+        		<h1><?php echo ucfirst($paginaURL); ?></h1>
         		<p>Acesse o sistema com seu e-mail e senha</p>
         		<br />
         		<form method="post" action="index.php" role="form">
         			<div class="form-group">
-        				<label for="login">Login</label>
-        				<input type="text" class="form-control" id="login" name="login" placeholder="Login" />
+        				<label for="login">E-mail</label>
+        				<input type="text" class="form-control" id="email" name="email" placeholder="E-mail" />
         			</div>
         			<div class="form-group">
         				<label for="password">Senha</label>

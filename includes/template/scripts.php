@@ -19,4 +19,7 @@
 
 <?php
   if(isset($nav0)) {echo "<script>$('#bs-example-navbar-collapse-1').empty();</script>";}
+  if(isset($_SESSION['isadmin'])  && $_SESSION['isadmin'] == 0) {echo "<script>$('#adminMenu').empty();</script>";}
 ?>
+
+
