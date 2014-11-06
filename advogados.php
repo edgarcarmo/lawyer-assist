@@ -1,4 +1,4 @@
-<?php //include_once("includes/valid_session.php"); ?>
+<?php include_once("includes/login/session.php"); ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <head>
@@ -6,6 +6,7 @@
         <?php
             include_once("includes/template/metas.php");
             include_once("includes/template/stylesheet.php");
+            include_once("includes/template/scriptsTop.php");
         ?>
     </head>
     <body>

@@ -1,3 +1,4 @@
+<?php include_once("includes/login/login.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,30 +6,17 @@
         <?php
             include_once("includes/template/metas.php");
             include_once("includes/template/stylesheet.php");
+            include_once("includes/template/scriptsTop.php");
         ?>
     </head>
     <body>
         <?php
-            include_once("includes/login/login.php");
             include_once("includes/template/menu.php");
         ?>
         <div class="container">
            <div class="col-md-4">&nbsp;</div>
             <div class="col-md-4">
-                <h1>Login</h1>
-                <p>Acesse o sistema com seu e-mail e senha</p>
-                <br />
-                <form method="post" action="index.php" role="form">
-                    <div class="form-group">
-                        <label for="login">Login</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="Login" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Senha</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha" />
-                    </div>
-                    <button type="submit" class="btn btn-success">Acessar</button>
-                </form>
+                <h1>Index</h1>
             </div>
             <div class="col-md-4">&nbsp;</div>
         </div>

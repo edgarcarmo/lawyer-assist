@@ -13,4 +13,10 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<script src="js/functions.js"></script>
+
 <!-- GA -->
+
+<?php
+  if(isset($nav0)) {echo "<script>$('#bs-example-navbar-collapse-1').empty();</script>";}
+?>
