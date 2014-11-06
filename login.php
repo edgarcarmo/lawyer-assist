@@ -3,13 +3,13 @@
     <head>
         <title>Lawyer Assist - Login</title>
         <?php
-            include_once("includes/metas.php");
-            include_once("includes/stylesheet.php");
+            include_once("includes/template/metas.php");
+            include_once("includes/template/stylesheet.php");
         ?>
     </head>
     <body>
         <?php
-            include_once("includes/menu_initial.php");
+            include_once("includes/template/menu_initial.php");
         ?>
         <div class="container">
     	   <div class="col-md-4">&nbsp;</div>
@@ -31,6 +31,6 @@
         	</div>
         	<div class="col-md-4">&nbsp;</div>
         </div>
-     	<?php  include_once("includes/scripts.php"); ?>
+     	<?php  include_once("includes/template/scripts.php"); ?>
     </body>
 </html>
