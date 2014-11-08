@@ -33,10 +33,14 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-2">
+							<div class="col-md-12">
 								<div class="form-group">
-									<label for="isadmin">Admin</label>
-									<input type="checkbox" id="isadmin" name="isadmin" class="form-control" placeholder="Admin" />
+									<p style="font-weight: bold">Perfil</p>
+									<div class="checkbox">
+										<label for="isadmin">
+											<input type="checkbox" id="isadmin" name="isadmin" /> Administrador
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>

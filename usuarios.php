@@ -19,7 +19,7 @@
         	</div>
         </div>
         <br />
-        <div class="container">
+        <div class="container" ng-controller="UserCtrl">
         	<div class="row">
     	    	<div class="col-md-12">
     	    		<table class="table table-striped table-bordered table-hover">
@@ -34,28 +34,17 @@
     	    				</tr>
     	    			</thead>
     	    			<tbody>
-    	    				<tr>
-    	    					<td><input type="checkbox" /></td>
-    	    					<td>0000/0000</td>
-    	    					<td>Edgar de Oliveira Carmo</td>
-    	    					<td>edgar.carmo@edenred.com</td>
-                                <td><input type="checkbox" /></td>
+    	    				<tr ng-repeat="user in users">
+    	    					<td><input type="checkbox" id="{{ user.id }}" /></td>
+    	    					<td>{{ user.id }}</td>
+    	    					<td>{{ user.name }}</td>
+    	    					<td>{{ user.email }}</td>
+                                <td><input type="checkbox" ng-checked="user.isadmin" /></td>
     	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
+    	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
     	    					</td>
     	    				</tr>
-    	    				<tr>
-                                <td><input type="checkbox" /></td>
-                                <td>0000/0000</td>
-                                <td>Edgar de Oliveira Carmo</td>
-                                <td>edgar.carmo@edenred.com</td>
-                                <td><input type="checkbox" /></td>
-                                <td>
-                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
-                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
     	    			</tbody>
     	    		</table>
     	    	</div>
@@ -77,6 +66,8 @@
         	</div>
         </div>
         <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/usuarios/lawyer_add.php"); ?>
+        <?php include_once("includes/modal/usuarios/user_add.php"); ?>
+
+        <script type="text/javascript" src="js/lawyer.js"></script>
     </body>
 </html>
