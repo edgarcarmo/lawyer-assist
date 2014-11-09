@@ -15,7 +15,7 @@
             include_once("includes/db/conection.php");
 
             $sql_user = "SELECT * FROM `users` WHERE 1 ORDER BY `id` asc";
-            $resultado = mysql_query($sql_comarca,$conexao) or die ("Erro na seleção da tabela.");
+            $resultado = mysql_query($sql_user,$conexao) or die ("Erro na seleção da tabela.");
 
         ?>
         <div class="container">
@@ -45,7 +45,7 @@
     	    					<td><?php echo $prod['id']; ?></td>
     	    					<td><?php echo $prod['name']; ?></td>
     	    					<td><?php echo $prod['email']; ?></td>
-                                <td><input type="checkbox" readonly="readonly" checked="<?php echo $prod['isadmin']; ?>" /></td>
+                                <td><input type="checkbox" readonly="readonly" <?php if($prod['isadmin']==1) {echo 'checked="checked"'; } ?> /></td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
@@ -67,7 +67,7 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#user_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover usuários</button>
         		</div>
         	</div>
