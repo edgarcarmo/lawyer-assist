@@ -1,4 +1,4 @@
-<div class="modal fade"  id="lawyer_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade"  id="user_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -6,7 +6,7 @@
 				<h4 class="modal-title">Advogado</h4>
 			</div>
 			<div class="modal-body">
-				<form action="#" role="form">
+				<form action="includes/modal/usuarios/add.php" method="post" id="add_submit" role="form">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
@@ -33,10 +33,14 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-2">
+							<div class="col-md-12">
 								<div class="form-group">
-									<label for="isadmin">Admin</label>
-									<input type="checkbox" id="isadmin" name="isadmin" class="form-control" placeholder="Admin" />
+									<p style="font-weight: bold">Perfil</p>
+									<div class="checkbox">
+										<label for="isadmin">
+											<input type="checkbox" id="isadmin" name="isadmin" /> Administrador
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -45,7 +49,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-success">Salvar</button>
+				<button type="button" class="btn btn-success" onclick="$('#add_submit').submit();">Salvar</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

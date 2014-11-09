@@ -1,7 +1,7 @@
 <?php include_once("includes/login/session_admin.php"); ?>
 <?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
     <head>
         <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
@@ -12,6 +12,11 @@
     <body>
         <?php
             include_once("includes/template/menu.php");
+            include_once("includes/db/conection.php");
+
+            $sql_user = "SELECT * FROM `users` WHERE 1 ORDER BY `id` asc";
+            $resultado = mysql_query($sql_user,$conexao) or die ("Erro na seleção da tabela.");
+
         ?>
         <div class="container">
         	<div class="col-md-6">
@@ -34,28 +39,19 @@
     	    				</tr>
     	    			</thead>
     	    			<tbody>
+                            <?php while($prod = mysql_fetch_array($resultado)) { ?>
     	    				<tr>
-    	    					<td><input type="checkbox" /></td>
-    	    					<td>0000/0000</td>
-    	    					<td>Edgar de Oliveira Carmo</td>
-    	    					<td>edgar.carmo@edenred.com</td>
-                                <td><input type="checkbox" /></td>
+    	    					<td><input type="checkbox" id="<?php echo $prod['id']; ?>" /></td>
+    	    					<td><?php echo $prod['id']; ?></td>
+    	    					<td><?php echo $prod['name']; ?></td>
+    	    					<td><?php echo $prod['email']; ?></td>
+                                <td><input type="checkbox" readonly="readonly" <?php if($prod['isadmin']==1) {echo 'checked="checked"'; } ?> /></td>
     	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
+    	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
     	    					</td>
     	    				</tr>
-    	    				<tr>
-                                <td><input type="checkbox" /></td>
-                                <td>0000/0000</td>
-                                <td>Edgar de Oliveira Carmo</td>
-                                <td>edgar.carmo@edenred.com</td>
-                                <td><input type="checkbox" /></td>
-                                <td>
-                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
-                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
+                            <?php } ?>
     	    			</tbody>
     	    		</table>
     	    	</div>
@@ -71,12 +67,14 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#user_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover usuários</button>
         		</div>
         	</div>
         </div>
         <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/usuarios/lawyer_add.php"); ?>
+        <?php include_once("includes/modal/usuarios/user_add.php"); ?>
+
+        <script type="text/javascript" src="js/lawyer.js"></script>
     </body>
 </html>

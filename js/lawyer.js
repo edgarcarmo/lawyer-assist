@@ -1,15 +1,21 @@
 var myApp = angular.module("myApp", []);
 
-myApp.controller("MainCtrl", ["$scope", function($scope){
-	$scope.text = "Olá, fã de angular!";
-}]);
+myApp.controller("UserCtrl", ["$scope", "$http", function($scope, $http){
 
-myApp.controller("UserCtrl", ["$scope", function($scope){
-
-	$scope.user = {};
-	$scope.user.details = {
-		"name": "Edgar de Oliveira Carmo";
-		"email": "edgar.carmo@edenred.com";
-	}
+	$scope.users = [
+		{
+			"id": 1,
+			"name": "Edgar de Oliveira Carmo",
+			"email": "edgarcarmo@gmail.com",
+			"password": "123456",
+			"isadmin": 1
+		}, {
+			"id": 2,
+			"name": "Adauto Cavasini Fernandes",
+			"email": "atocf1@gmail.com",
+			"password": "1234567",
+			"isadmin": 0
+		}
+	]
 	
 }]);

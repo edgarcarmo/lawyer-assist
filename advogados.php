@@ -1,7 +1,7 @@
 <?php include_once("includes/login/session.php"); ?>
 <?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
     <head>
         <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
@@ -45,21 +45,12 @@
     	    					<td>(11) 99338-9037</td>
     	    					<td>edgar.carmo@edenred.com</td>
     	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-    	    					</td>
-    	    				</tr>
-    	    				<tr>
-    	    					<td><input type="checkbox" /></td>
-    	    					<td>0000/0000</td>
-    	    					<td>SP</td>
-    	    					<td>Adauto Cavasini Fernandes</td>
-    	    					<td>(11) 3066-4100</td>
-    	    					<td>(11) 90000-0000</td>
-    	    					<td>adauto.fernandes@consulting-for.edenred.com</td>
-    	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-pencil"></span></button>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
+    	    						<button class="btn btn-default btn-sm" title="Editar dados" data-toggle="modal" data-target="#lawyer_edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button class="btn btn-default btn-sm" title="Excluir advogado"><span class="glyphicon glyphicon-trash"></span></button>
+                                    <!--
+                                    <button class="btn btn-default btn-sm" title="Upload de arquivos"><span class="glyphicon glyphicon-upload"></span></button>
+                                    <button class="btn btn-default btn-sm" title="Histórico"><span class="glyphicon glyphicon-list-alt"></span></button>
+    	    						-->
     	    					</td>
     	    				</tr>
     	    			</tbody>
@@ -82,7 +73,10 @@
         		</div>
         	</div>
         </div>
-        <?php  include_once("includes/template/scripts.php"); ?>
+<?php include_once("includes/modal/advogados/lawyer_edit.php"); ?>
         <?php include_once("includes/modal/advogados/lawyer_add.php"); ?>
+        
+        <?php include_once("includes/template/scripts.php"); ?>
+        
     </body>
 </html>
