@@ -26,7 +26,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a onclick="logout();"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+        <li><a onclick="logout();" href="#"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

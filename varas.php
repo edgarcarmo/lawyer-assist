@@ -12,6 +12,13 @@
     <body>
         <?php
             include_once("includes/template/menu.php");
+            include_once("includes/db/conection.php");
+            $sql_varas = "SELECT v.id, v.name as vara, c.name as comarca\n"
+                        . "FROM varas as v\n"
+                        . "INNER JOIN comarcas as c on v.comarca_id = c.id \n"
+                        . "WHERE 1\n"
+                        . "ORDER BY c.name asc, v.name asc";
+            $resultado_varas = mysql_query($sql_varas,$conexao) or die ("Erro na seleção da tabela.");
         ?>
         <div class="container">
         	<div class="col-md-6">
@@ -33,26 +40,18 @@
     	    				</tr>
     	    			</thead>
     	    			<tbody>
-    	    				<tr>
-    	    					<td><input type="checkbox" /></td>
-    	    					<td>0000/0000</td>
-    	    					<td>Edgar de Oliveira Carmo</td>
-    	    					<td>(11) 3066-4572</td>
-    	    					<td>
-    	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
-    	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-    	    					</td>
-    	    				</tr>
-    	    				<tr>
-                                <td><input type="checkbox" /></td>
-                                <td>0000/0000</td>
-                                <td>Edgar de Oliveira Carmo</td>
-                                <td>(11) 3066-4572</td>
-                                <td>
-                                    <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
-                                    <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
+    	    				<?php while($prod = mysql_fetch_array($resultado_varas)) { ?>
+                                 <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td><?php echo $prod['id']; ?></td>
+                                    <td><?php echo $prod['vara']; ?></td>
+                                    <td><?php echo $prod['comarca']; ?></td>
+                                    <td>
+                                        <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
+                                        <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
     	    			</tbody>
     	    		</table>
     	    	</div>
