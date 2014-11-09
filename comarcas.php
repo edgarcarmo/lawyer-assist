@@ -63,12 +63,12 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button>
         		</div>
         	</div>
         </div>
         <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/comarcas/lawyer_add.php"); ?>
+        <?php include_once("includes/modal/comarcas/comarcas_add.php"); ?>
     </body>
 </html>

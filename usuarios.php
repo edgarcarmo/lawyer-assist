@@ -1,7 +1,7 @@
 <?php include_once("includes/login/session_admin.php"); ?>
 <?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
     <head>
         <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
@@ -12,6 +12,11 @@
     <body>
         <?php
             include_once("includes/template/menu.php");
+            include_once("includes/db/conection.php");
+
+            $sql_user = "SELECT * FROM `users` WHERE 1 ORDER BY `id` asc";
+            $resultado = mysql_query($sql_comarca,$conexao) or die ("Erro na seleção da tabela.");
+
         ?>
         <div class="container">
         	<div class="col-md-6">
@@ -19,7 +24,7 @@
         	</div>
         </div>
         <br />
-        <div class="container" ng-controller="UserCtrl">
+        <div class="container">
         	<div class="row">
     	    	<div class="col-md-12">
     	    		<table class="table table-striped table-bordered table-hover">
@@ -34,17 +39,19 @@
     	    				</tr>
     	    			</thead>
     	    			<tbody>
-    	    				<tr ng-repeat="user in users">
-    	    					<td><input type="checkbox" id="{{ user.id }}" /></td>
-    	    					<td>{{ user.id }}</td>
-    	    					<td>{{ user.name }}</td>
-    	    					<td>{{ user.email }}</td>
-                                <td><input type="checkbox" ng-checked="user.isadmin" /></td>
+                            <?php while($prod = mysql_fetch_array($resultado)) { ?>
+    	    				<tr>
+    	    					<td><input type="checkbox" id="<?php echo $prod['id']; ?>" /></td>
+    	    					<td><?php echo $prod['id']; ?></td>
+    	    					<td><?php echo $prod['name']; ?></td>
+    	    					<td><?php echo $prod['email']; ?></td>
+                                <td><input type="checkbox" readonly="readonly" checked="<?php echo $prod['isadmin']; ?>" /></td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
     	    					</td>
     	    				</tr>
+                            <?php } ?>
     	    			</tbody>
     	    		</table>
     	    	</div>
