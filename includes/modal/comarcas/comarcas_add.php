@@ -20,7 +20,7 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="decjud">Decreto Judici&#225;rio</label>
-									<input type="text" id="decjud" name="decjud" class="form-control" placeholder="Decreto Judici&#225;rio" />
+									<input type="text" id="decjud" name="decjud" class="form-control" onfocus="createMask();" placeholder="Decreto Judici&#225;rio" />
 								</div>
 							</div>
 						</div>
@@ -29,8 +29,8 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-success" onclick="$('#add_sumbit').submit();">Salvar</button>
+				<button type="button" class="btn btn-success" onclick="$('#add_sumbit').submit();" >Salvar</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->	
+</div><!-- /.modal -->

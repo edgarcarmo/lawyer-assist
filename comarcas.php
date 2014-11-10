@@ -1,7 +1,7 @@
 <?php include_once("includes/login/session_admin.php"); ?>
 <?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
     <head>
         <title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
         <?php
@@ -43,8 +43,8 @@
                                     <td><?php echo $prod['name']; ?></td>
                                     <td><?php echo $prod['decjud']; ?></td>
                                     <td>
-                                        <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
-                                        <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>                                        
+                                        <a href="#" onclick="excluir(<?php echo $prod['id'] ?>, 'comarcas');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -63,7 +63,7 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#comarcas_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button>
         		</div>
         	</div>

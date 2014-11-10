@@ -22,7 +22,7 @@
 			    header('location:../../../usuarios.php');
 			} else {
 			    //echo "Error: " . $sql . "<br>" . $conexao->error;
-			    header('location:../../../error.php?error='.$conexao->error);
+			    header('location:../../../error.php?error='.$conexao->error."url=usuarios.php");
 			}
 		} else {
 			$error = urlencode("O e-mail $email já está cadastrado");
@@ -32,7 +32,9 @@
 		}
 
 	} else {
-		header('location:../../../notfound.php');
+		$error = urlencode("Não foi possível salvar os dados informados.");
+		$url = "usuarios.php";
+		header('location:../../../error.php?error='.$error."&url=".$url);
 	}
 
 ?>

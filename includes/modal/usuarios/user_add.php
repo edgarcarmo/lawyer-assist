@@ -20,7 +20,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="email">E-mail</label>
-									<input type="text" id="email" name="email" class="form-control" placeholder="E-mail" />
+									<input type="email" id="email" name="email" class="form-control" placeholder="E-mail" />
 								</div>
 							</div>
 						</div>
@@ -28,7 +28,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="password">Senha</label>
-									<input type="text" id="password" name="password" class="form-control" placeholder="Senha" />
+									<input type="password" id="password" name="password" class="form-control" placeholder="Senha" />
 								</div>
 							</div>
 						</div>
