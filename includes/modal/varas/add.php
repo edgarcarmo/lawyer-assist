@@ -11,6 +11,9 @@
 	if ($resultado === TRUE) {
 	    header('location:../../../varas.php');
 	} else {
-	    echo "Error: " . $sql . "<br>" . $conexao->error;
+	    //echo "Error: " . $sql . "<br>" . $conexao->error;
+	    $error = $conexao->error;
+	    $url = "varas.php";
+	    header('location:../../../error.php?error='.$error."&url=".$url);
 	}
  ?>

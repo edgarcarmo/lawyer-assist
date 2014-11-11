@@ -48,7 +48,7 @@
                                     <td><?php echo $prod['comarca']; ?></td>
                                     <td>
                                         <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
-                                        <button class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></button>
+                                        <a href="#" onclick="excluir(<?php echo $prod['id'] ?>, 'varas');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -73,6 +73,6 @@
         	</div>
         </div>
         <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/varas/lawyer_add.php"); ?>
+        <?php include_once("includes/modal/varas/varas_add.php"); ?>
     </body>
 </html>
