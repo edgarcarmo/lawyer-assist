@@ -45,7 +45,7 @@
     	    					<td><?php echo $prod['id']; ?></td>
     	    					<td><?php echo $prod['name']; ?></td>
     	    					<td><?php echo $prod['email']; ?></td>
-                                <td><input type="checkbox" readonly="readonly" <?php if($prod['isadmin']==1) {echo 'checked="checked"'; } ?> /></td>
+                                <td><input type="checkbox" disabled="true" <?php if($prod['isadmin']==1) {echo 'checked="checked"'; } ?> /></td>
     	    					<td>
     	    						<button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
     	    						<a href="#" onclick="excluir(<?php echo $prod['id'] ?>, 'usuarios');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
@@ -67,14 +67,14 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#user_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar usuários</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover usuários</button>
         		</div>
         	</div>
         </div>
-        <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/usuarios/user_add.php"); ?>
-
-        <script type="text/javascript" src="js/lawyer.js"></script>
+        <?php  
+            include_once("includes/template/scripts.php"); 
+            include_once("includes/modal/usuarios/lawyer_add.php"); 
+        ?>
     </body>
 </html>

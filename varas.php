@@ -13,11 +13,7 @@
         <?php
             include_once("includes/template/menu.php");
             include_once("includes/db/conection.php");
-            $sql_varas = "SELECT v.id, v.name as vara, c.name as comarca\n"
-                        . "FROM varas as v\n"
-                        . "INNER JOIN comarcas as c on v.comarca_id = c.id \n"
-                        . "WHERE 1\n"
-                        . "ORDER BY c.name asc, v.name asc";
+            $sql_varas = "SELECT * FROM `varas` WHERE 1 ORDER BY `name` asc";
             $resultado_varas = mysql_query($sql_varas,$conexao) or die ("Erro na seleção da tabela.");
         ?>
         <div class="container">
@@ -34,7 +30,6 @@
     	    				<tr>
     	    					<th><input type="checkbox" /></th>
     	    					<th>ID</th>
-    	    					<th>Comarca</th>
     	    					<th>Vara</th>
                                 <th>A&ccedil;&otilde;es</th>
     	    				</tr>
@@ -44,8 +39,7 @@
                                  <tr>
                                     <td><input type="checkbox" /></td>
                                     <td><?php echo $prod['id']; ?></td>
-                                    <td><?php echo $prod['vara']; ?></td>
-                                    <td><?php echo $prod['comarca']; ?></td>
+                                    <td><?php echo $prod['name']; ?></td>
                                     <td>
                                         <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>
                                         <a href="#" onclick="excluir(<?php echo $prod['id'] ?>, 'varas');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>

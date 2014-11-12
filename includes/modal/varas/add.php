@@ -1,10 +1,9 @@
 <?php 
 	include_once("../../db/conection.php");
-	
- 	$comarca_id = $_POST['comarca_id'];
+
     $name = $_POST['name'];	
 
-	$sql = "INSERT INTO `varas`(`comarca_id`, `name`) VALUES ('$comarca_id','$name')";
+	$sql = "INSERT INTO `varas`(`name`) VALUES ('$name')";
 
 	$resultado = mysql_query($sql,$conexao) or die ("Erro na seleção da tabela.");
 

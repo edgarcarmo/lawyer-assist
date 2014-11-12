@@ -13,7 +13,7 @@
         <?php
             include_once("includes/template/menu.php");
             include_once("includes/db/conection.php");
-            $sql_comarca = "SELECT * FROM `comarcas` WHERE 1 ORDER BY `name` asc, `decjud` asc";
+            $sql_comarca = "SELECT * FROM `comarcas` WHERE 1 ORDER BY `name` asc";
             $resultado_comarca = mysql_query($sql_comarca,$conexao) or die ("Erro na seleção da tabela.");
         ?>
         <div class="container">
@@ -31,8 +31,7 @@
     	    					<th><input type="checkbox" /></th>
     	    					<th>ID</th>
     	    					<th>Nome</th>
-    	    					<th>Decreto Judici&#225;rio</th>
-                                <th>A&ccedil;&otilde;es</th>
+    	    					<th>A&ccedil;&otilde;es</th>
     	    				</tr>
     	    			</thead>
     	    			<tbody>
@@ -41,7 +40,6 @@
                                     <td><input type="checkbox" /></td>
                                     <td><?php echo $prod['id']; ?></td>
                                     <td><?php echo $prod['name']; ?></td>
-                                    <td><?php echo $prod['decjud']; ?></td>
                                     <td>
                                         <button class="btn btn-default btn-xs" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>                                        
                                         <a href="#" onclick="excluir(<?php echo $prod['id'] ?>, 'comarcas');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
@@ -63,12 +61,14 @@
     				</nav>
         		</div>
         		<div class="col-md-4">
-        			<button class="btn btn-success" data-toggle="modal" data-target="#comarcas_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
+        			<button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
         			<button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button>
         		</div>
         	</div>
         </div>
-        <?php  include_once("includes/template/scripts.php"); ?>
-        <?php include_once("includes/modal/comarcas/comarcas_add.php"); ?>
+        <?php  
+            include_once("includes/template/scripts.php"); 
+            include_once("includes/modal/comarcas/lawyer_add.php"); 
+        ?>
     </body>
 </html>
