@@ -19,7 +19,6 @@
           <a href="#" data-toggle="dropdown" id="adminMenu">Administra&ccedil;&atilde;o <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="comarcas.php">Comarcas</a></li>
-            <li><a href="varas.php">Varas</a></li>
             <li class="divider"></li>
             <li><a href="usuarios.php">Usuários</a></li>
           </ul>

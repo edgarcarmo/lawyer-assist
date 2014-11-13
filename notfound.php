@@ -1,7 +1,7 @@
 <?php include_once("includes/login/session.php"); ?>
 <?php include_once("includes/template/functions.php"); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
 	<meta charset="UTF-8">
 	<title>Lawyer Assist - <?php echo ucfirst($paginaURL); ?></title>
