@@ -10,8 +10,7 @@
 	 	$isadmin = isset($_POST['isadmin']) ? $_POST['isadmin'] : "";
 	    
 	   	$sql = "SELECT `email` FROM `users` WHERE `email` = '$email' AND `id` <> '$id'";
-	   	echo $sql;
-		$resultado = mysql_query($sql, $conexao) or die ("Não foi possível consultar o email");
+	   	$resultado = mysql_query($sql, $conexao) or die ("Não foi possível consultar o email");
 
 	    if(!mysql_num_rows($resultado) > 0) {
 
