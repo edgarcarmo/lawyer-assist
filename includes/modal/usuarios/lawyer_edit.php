@@ -1,4 +1,3 @@
-
 <div class="modal fade"  id="lawyer_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -38,9 +37,7 @@
 								<div class="form-group">
 									<p style="font-weight: bold">Perfil</p>
 									<div class="checkbox">
-										<label for="isadmin">
-											<input type="checkbox" id="isadmin" name="isadmin" /> Administrador
-										</label>
+										<label for="isadmin"><input type="checkbox" id="isadmin" name="isadmin" />Administrador</label>
 									</div>
 								</div>
 							</div>
@@ -49,7 +46,7 @@
 				</div>
 				<input type="hidden" id="id" name="id" />
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">Cancelar</button>
 					<button type="submit" class="btn btn-success">Salvar</button>
 				</div>
 			</form>

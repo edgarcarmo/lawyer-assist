@@ -1,11 +1,11 @@
-<?php 
+<?php
 	include_once("../../db/conection.php");
-	
+
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	 	$id = isset($_POST['id']) ? $_POST['id'] : "";
 	 	$name = isset($_POST['name']) ? $_POST['name'] : "";
-	    
+
 	    // Possui comarca
 	    $sql = "SELECT * FROM `comarcas` WHERE `name` = '$name'";
 	    $resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar comarcas já cadastradas");

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include_once("../../db/conection.php");
     $sql = "SELECT * FROM `comarcas` WHERE 1 ORDER BY `name` asc";
     $resultado = mysql_query($sql,$conexao) or die ("Erro na seleção da tabela.");
@@ -8,5 +8,6 @@
     	}
     	$main_arr[] = $arr;
     }
+    header('Content-Type: application/json');
     echo json_encode($main_arr);
  ?>
