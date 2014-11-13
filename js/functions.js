@@ -55,6 +55,11 @@ function adminListResult($scope, $http, $filter){
          $("#lawyer_edit #name").val(name);
          $("#lawyer_edit #email").val(email);
          $("#lawyer_edit #password").val(password);
+         if(isadmin == 1){
+         	$("#lawyer_edit #isadmin").attr('checked', 'checked');
+         } else {
+         	$("#lawyer_edit #isadmin").removeAttr('checked');
+         }
 	}
 
 	$scope.currentPage = 0;

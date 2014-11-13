@@ -21,7 +21,6 @@
 			if ($resultado === TRUE) {
 			    header('location:../../../usuarios.php');
 			} else {
-			    //echo "Error: " . $sql . "<br>" . $conexao->error;
 			    $error = $conexao->error;
 			    $url = "usuarios.php";
 			    header('location:../../../error.php?error='.$error."&url=".$url);
@@ -29,7 +28,6 @@
 		} else {
 			$error = urlencode("O e-mail $email já está cadastrado");
 			$url = "usuarios.php";
-			//header('location:../../../notfound.php');
 			header('location:../../../error.php?error='.$error.'&url='.$url);
 		}
 

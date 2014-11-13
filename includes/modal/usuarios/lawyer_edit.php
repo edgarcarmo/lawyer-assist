@@ -46,7 +46,7 @@
 				</div>
 				<input type="hidden" id="id" name="id" />
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn_cancel" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 					<button type="submit" class="btn btn-success">Salvar</button>
 				</div>
 			</form>
