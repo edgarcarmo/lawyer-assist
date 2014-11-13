@@ -1,9 +1,9 @@
 <?PHP
 
 	$hostname="127.0.0.1";
-	$username="root";
-	$password="123456";
-	$database="lawyer-assist";
+	$username="lex_assist";
+	$password="lex_assist_123456";
+	$database="lex_lawyer_assist";
 
 	//Conexão mysql
 	$conexao = mysql_connect($hostname, $username, $password) or die ("<h1>Erro na conexão do banco de dados.</h1>");

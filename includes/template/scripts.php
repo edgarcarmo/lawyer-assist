@@ -6,8 +6,6 @@
 <script src="js/angular.min.js"></script>
 <script src="js/underscore-min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/additional-methods.min.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

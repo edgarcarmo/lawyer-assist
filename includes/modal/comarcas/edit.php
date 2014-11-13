@@ -3,6 +3,7 @@
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 
+	 	$id = isset($_POST['id']) ? $_POST['id'] : "";
 	 	$name = isset($_POST['name']) ? $_POST['name'] : "";
 	    
 	    // Possui comarca
@@ -11,7 +12,7 @@
 
 	    if(!mysql_num_rows($resultado) > 0) {
 
-			$sql = "INSERT INTO `comarcas`(`name`) VALUES ('$name')";
+			$sql = "UPDATE `comarcas` SET `name` =  '$name' WHERE `id` = '$id'";
 
 			$resultado = mysql_query($sql, $conexao) or die ("Erro na seleção da tabela.");
 
