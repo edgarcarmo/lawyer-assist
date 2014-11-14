@@ -30,7 +30,7 @@
         	    		<table id="list" class="table table-striped table-bordered table-hover">
         	    			<thead>
         	    				<tr>
-        	    					<th><input type="checkbox" name="listCheckboxFull" id="listCheckboxFull"/></th>
+        	    					<th><input type="checkbox" ng-model="checkboxMaster" name="checkboxMaster" id="checkboxMaster"/></th>
         	    					<th>ID</th>
         	    					<th>Nome</th>
         	    					<th>A&ccedil;&otilde;es</th>
@@ -38,11 +38,11 @@
         	    			</thead>
     	    			    <tbody >
         				        <tr ng-repeat="item in filterItens = (itens | filter:search) | startForm:currentPage*pageSize | limitTo:pageSize">
-                                    <td><input type="checkbox" class="checkbox_item" id="listCheckbox{{item.id}}" name="listCheckbox[]" value="{{item.id}}"/></td>
+                                    <td><input type="checkbox" ng-checked="checkboxMaster" id="listCheckbox{{item.id}}" name="listCheckbox[]" value="{{item.id}}"/></td>
                                     <td>{{item.id}}</td>
                                     <td>{{item.name}}</td>
                                     <td>
-                                        <button class="btn btn-default btn-xs btn_edit" data-id="{{item.id}}" data-name="{{item.name}}" data-toggle="modal" data-target="#lawyer_edit" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>                                        
+                                        <a href="#" ng-click="editarComarcas(item.id, item.name)" data-toggle="modal" data-target="#lawyer_edit" class="btn btn-default btn-xs btn_edit" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
                                         <a href="#" ng-click="excluir(item.id, null, 'comarcas');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
@@ -69,12 +69,6 @@
         <?php include_once("includes/modal/comarcas/lawyer_edit.php"); ?>
         <script type="text/javascript">
             $(document).ready(function(){$("#adminListResult").scope().listItens("comarcas");});
-            $(document).on("click", ".btn_edit", function () {
-                 var id = $(this).data('id');
-                 var name = $(this).data('name');
-                 $("#lawyer_edit #id").val(id);
-                 $("#lawyer_edit #name").val(name);
-            }); 
         </script>
     </body>
 </html>

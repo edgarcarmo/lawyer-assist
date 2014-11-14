@@ -33,7 +33,7 @@
         	    		<table class="table table-striped table-bordered table-hover">
         	    			<thead>
         	    				<tr>
-        	    					<th><input type="checkbox" name="listCheckboxFull" id="listCheckboxFull"/></th>
+        	    					<th><input type="checkbox" ng-model="checkboxMaster" name="checkboxMaster" id="checkboxMaster"/></th>
                                     <th>ID</th>
         	    					<th>Nome</th>
         	    					<th>E-mail</th>
@@ -43,16 +43,15 @@
         	    			</thead>
         	    			<tbody>
                                 <tr ng-repeat="item in filterItens = (itens | filter:search) | startForm:currentPage*pageSize | limitTo:pageSize">
-        	    					<td><input type="checkbox" class="checkbox_item" id="listCheckbox{{item.id}}" name="listCheckbox[]" value="{{item.id}}"/></td>
+        	    					<td><input type="checkbox" ng-checked="checkboxMaster" id="listCheckbox{{item.id}}" name="listCheckbox[]" value="{{item.id}}"/></td>
                                     <td>{{item.id}}</td>
         	    					<td>{{item.name}}</td>
         	    					<td>{{item.email}}</td>
                                     <td>
-                                        <input type="checkbox" disabled="true" ng-if="item.isadmin == 0" />
-                                        <input type="checkbox" disabled="true" ng-if="item.isadmin == 1" checked="checked" />
+                                        <input type="checkbox" disabled="true" ng-checked="item.isadmin == 1"/>
                                     </td>
         	    					<td>
-        	    						<button class="btn btn-default btn-xs btn_edit" data-id="{{item.id}}" data-name="{{item.name}}" data-email="{{item.email}}" data-isadmin="{{item.isadmin}}" data-password="{{item.password}}" data-toggle="modal" data-target="#lawyer_edit" title="Editar"><span class="glyphicon glyphicon-pencil"></span></button>                                        
+        	    						<a href="#" ng-click="editarUsuarios(item.id, item.name, item.email, item.isadmin, item.password)" class="btn btn-default btn-xs btn_edit" data-toggle="modal" data-target="#lawyer_edit" title="Editar"><span class="glyphicon glyphicon-pencil"></span></a>
                                         <a href="#" ng-click="excluir(item.id, null, 'usuarios');" class="btn btn-default btn-xs" title="Remover"><span class="glyphicon glyphicon-trash"></span></a>
                             		</td>
         	    				</tr>
@@ -79,21 +78,6 @@
         <?php include_once("includes/modal/usuarios/lawyer_edit.php"); ?>
         <script type="text/javascript">
             $(document).ready(function(){$("#adminListResult").scope().listItens("usuarios");});
-            $(document).on("click", ".btn_edit", function () {
-                 var id = $(this).data('id');
-                 var name = $(this).data('name');
-                 var email = $(this).data('email');
-                 var isadmin = $(this).data('isadmin');
-                 var password = $(this).data('password');
-                 $("#lawyer_edit #id").val(id);
-                 $("#lawyer_edit #name").val(name);
-                 $("#lawyer_edit #email").val(email);
-                 $("#lawyer_edit #isadmin").val(isadmin);
-                 if(isadmin == 1){
-                    $("#lawyer_edit #isadmin").attr('checked', 'checked');
-                 }
-                 $("#lawyer_edit #password").val(password);                 
-            }); 
         </script>
     </body>
 </html>

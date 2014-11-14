@@ -1,7 +1,7 @@
 var app = angular.module("myApp", []);
 
 function adminListResult($scope, $http, $filter){
-	
+
 	$scope.itens = [];
 	$scope.filterItens = [];
 
@@ -10,7 +10,7 @@ function adminListResult($scope, $http, $filter){
 		$http.post($scope.url).success(function(data, status){
 			$scope.itens = data;
 		}).error(function(data, status){
-				
+
 		});
 	};
 
@@ -18,7 +18,7 @@ function adminListResult($scope, $http, $filter){
 		if(id != null){
 			var resp = confirm("Confirma a exclusão?");
 			if(resp){
-				$scope.url = "includes/modal/"+files+"/remove.php?id="+id;;
+				$scope.url = "includes/modal/"+files+"/remove.php?id="+id;
 				$http.post($scope.url).success(function(data, status){
 					$scope.listItens(files);
 				}).error(function(data, status){
@@ -30,7 +30,7 @@ function adminListResult($scope, $http, $filter){
 			$('.checkbox_item').each(function() { //loop through each checkbox
                 if(this.checked == true){
                 	count = count + 1;
-                };               
+                };
             });
             if(count != 0){
 				var resp = confirm("Confirma a exclusão?");
@@ -45,9 +45,26 @@ function adminListResult($scope, $http, $filter){
 		}
 	};
 
+	$scope.editarComarcas = function (id, name) {
+		 $("#lawyer_edit #id").val(id);
+         $("#lawyer_edit #name").val(name);
+	}
+
+	$scope.editarUsuarios = function (id, name, email, isadmin, password) {
+		 $("#lawyer_edit #id").val(id);
+         $("#lawyer_edit #name").val(name);
+         $("#lawyer_edit #email").val(email);
+         $("#lawyer_edit #password").val(password);
+         if(isadmin == 1){
+         	$("#lawyer_edit #isadmin").attr('checked', 'checked');
+         } else {
+         	$("#lawyer_edit #isadmin").removeAttr('checked');
+         }
+	}
+
 	$scope.currentPage = 0;
 	$scope.pageSize = 5;
-	
+
 	$scope.numberOfPages = function(){
 		return Math.ceil($scope.filterItens.length/$scope.pageSize);
 	}
@@ -80,16 +97,4 @@ function logout() {
 $(document).ready(function(){
     $('.mask_cpf').mask('999.999.999-99');
     $(".mask_phone").mask("(99)99999-9999");
-
-    $('#listCheckboxFull').click(function(event) {  //on click 
-        if(this.checked) { // check select status
-            $('.checkbox_item').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox1"               
-            });
-        }else{
-            $('.checkbox_item').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
-            });         
-        }
-    });
 });

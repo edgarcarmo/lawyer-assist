@@ -12,8 +12,8 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="name">Nome</label>
-									<input type="text" id="name" name="name" maxlength="200" class="form-control" placeholder="Nome" required value="<?php echo $name; ?>"/>
-									<input type="hidden" id="id" name="id" />	
+									<input type="text" id="name" name="name" maxlength="200" class="form-control" placeholder="Nome" required />
+									<input type="hidden" id="id" name="id" />
 								</div>
 							</div>
 						</div>
