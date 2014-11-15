@@ -72,7 +72,7 @@
                     </div>
         		</div>
         		<div class="col-md-4">
-                    <button class="btn btn-success" data-toggle="modal" data-target="#lawyer_add"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogados</button>
+                    <button class="btn btn-success" onclick="window.location.href = 'novo_advogado.php';"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogados</button>
                     <button class="btn btn-danger" ng-click="excluir(null, 'remove_sumbit', 'advogados');"><span class="glyphicon glyphicon-trash"></span> Remover advogados</button>
                 </div>
         	</div>
